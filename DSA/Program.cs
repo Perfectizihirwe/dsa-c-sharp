@@ -3,6 +3,7 @@ using DSA.ADT;
 using DSA.BinarySearchTree;
 using DSA.Linked_Lists;
 using DSA.Stack;
+using System;
 using System.Collections;
 
 // Abstract data types
@@ -174,12 +175,42 @@ using System.Collections;
 
 // Binary Search Tree
 
-BinarySearchTree bst  = new BinarySearchTree();
+//BinarySearchTree bst  = new BinarySearchTree();
 
-bst.Insert(7, "First");
-bst.Insert(23, "Second");
-bst.Insert(151, "Third");
-bst.Insert(4, "Fourth");
-bst.Insert(1, "Fifth");
+//bst.Insert(7, "First");
+//bst.Insert(23, "Second");
+//bst.Insert(151, "Third");
+//bst.Insert(4, "Fourth");
+//bst.Insert(1, "Fifth");
 
-Console.WriteLine(bst.Find(151));
+//Console.WriteLine(bst.Find(151));
+
+// Bubble Sort, very inefficient, what not to do, O(n^2) Quadratic time complexity
+
+int[] intArray = new int[] { 6, 5, 1, 7, 2, 4 };
+
+int[] BubbleSort(int[] array)
+{
+    // hold the temporary swap variable
+    int temp;
+
+    for (int pointer = 0; pointer < array.Length; pointer++)
+    {
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            if (array[i] > array[i+1])
+            {
+                temp = array[i+1];
+                array[i+1] = array[i];
+                array[i] = temp;
+            }
+        }
+    }
+
+    return array;
+}
+
+foreach (int number in BubbleSort(intArray))
+{
+    Console.WriteLine(number);
+}
