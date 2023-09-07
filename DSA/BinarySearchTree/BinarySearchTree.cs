@@ -21,7 +21,8 @@ namespace DSA.BinarySearchTree
             TreeNode newNode = new TreeNode(key, value);
 
             // Only on the first insert
-            if (root == null) {
+            if (root == null)
+            {
                 root = newNode;
                 return root;
             }
@@ -38,6 +39,51 @@ namespace DSA.BinarySearchTree
             return root;
         }
 
+        public void PrintInOrderTraversal()
+        {
+            InOrderTraversal(Root);
+        }
+
+        public void InOrderTraversal(TreeNode root)
+        {
+            if (root is not null)
+            {
+                InOrderTraversal(root.LeftChild);
+                Console.WriteLine(root.key + " " + root.value);
+                InOrderTraversal(root.RightChild);
+            }
+        }
+
+        public void PrintPreOrderTraversal()
+        {
+            PreOrderTraversal(Root);
+        }
+
+        public void PreOrderTraversal(TreeNode root)
+        {
+            if (root is not null)
+            {
+                Console.WriteLine(root.key + " " + root.value);
+                InOrderTraversal(root.LeftChild);
+                InOrderTraversal(root.RightChild);
+            }
+        }
+
+        public void PrintPostOrderTraversal()
+        {
+            PostOrderTraversal(Root);
+        }
+
+        public void PostOrderTraversal(TreeNode root)
+        {
+            if (root is not null)
+            {
+                InOrderTraversal(root.LeftChild);
+                InOrderTraversal(root.RightChild);
+                Console.WriteLine(root.key + " " + root.value);
+            }
+        }
+
         public string Find(int key)
         {
             TreeNode node = FindItem(Root, key);
@@ -46,7 +92,7 @@ namespace DSA.BinarySearchTree
 
         public TreeNode FindItem(TreeNode node, int key)
         {
-            if(node == null || node.key == key)
+            if (node == null || node.key == key)
             {
                 return node;
             }

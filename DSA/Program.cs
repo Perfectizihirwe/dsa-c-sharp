@@ -175,42 +175,70 @@ using System.Collections;
 
 // Binary Search Tree
 
-//BinarySearchTree bst  = new BinarySearchTree();
+BinarySearchTree bst = new BinarySearchTree();
 
-//bst.Insert(7, "First");
-//bst.Insert(23, "Second");
-//bst.Insert(151, "Third");
-//bst.Insert(4, "Fourth");
-//bst.Insert(1, "Fifth");
+bst.Insert(10, "First");
+bst.Insert(7, "Second");
+bst.Insert(6, "Third");
+bst.Insert(1, "Fourth");
+bst.Insert(8, "Fifth");
+bst.Insert(9, "Fifth"); 
+bst.Insert(11, "Fifth"); 
+bst.Insert(20, "Fifth"); 
+bst.Insert(14, "Fifth"); 
+bst.Insert(22, "Fifth");
 
 //Console.WriteLine(bst.Find(151));
 
 // Bubble Sort, very inefficient, what not to do, O(n^2) Quadratic time complexity
 
-int[] intArray = new int[] { 6, 5, 1, 7, 2, 4 };
+//int[] intArray = new int[] { 6, 5, 1, 7, 2, 4 };
 
-int[] BubbleSort(int[] array)
-{
-    // hold the temporary swap variable
-    int temp;
+//int[] BubbleSort(int[] array)
+//{
+//    // hold the temporary swap variable
+//    int temp;
 
-    for (int pointer = 0; pointer < array.Length; pointer++)
-    {
-        for (int i = 0; i < array.Length - 1; i++)
-        {
-            if (array[i] > array[i+1])
-            {
-                temp = array[i+1];
-                array[i+1] = array[i];
-                array[i] = temp;
-            }
-        }
-    }
+//    for (int pointer = 0; pointer < array.Length; pointer++)
+//    {
+//        for (int i = 0; i < array.Length - 1; i++)
+//        {
+//            if (array[i] > array[i+1])
+//            {
+//                temp = array[i+1];
+//                array[i+1] = array[i];
+//                array[i] = temp;
+//            }
+//        }
+//    }
 
-    return array;
-}
+//    return array;
+//}
 
-foreach (int number in BubbleSort(intArray))
-{
-    Console.WriteLine(number);
-}
+//foreach (int number in BubbleSort(intArray))
+//{
+//    Console.WriteLine(number);
+//}
+
+// Tree traveral
+
+// In-Order depth first
+
+Console.WriteLine("==========================");
+Console.WriteLine("In Order");
+bst.PrintInOrderTraversal();
+Console.WriteLine("==========================");
+
+// Pre-Order 
+
+Console.WriteLine("==========================");
+Console.WriteLine("Pre Order");
+bst.PrintPreOrderTraversal();
+Console.WriteLine("==========================");
+
+// Post-Order
+
+Console.WriteLine("==========================");
+Console.WriteLine("Post Order");
+bst.PrintPostOrderTraversal();
+Console.WriteLine("==========================");
